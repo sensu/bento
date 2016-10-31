@@ -1,5 +1,11 @@
 DISTRIBUTIONS="base.txz lib32.txz kernel.txz src.txz"
 
+arch=`uname -m`
+
+if [ "x$arch" = "xi386" ]; then
+  DISTRIBUTIONS="base.txz kernel.txz src.txz"
+fi
+
 # for variations in the root disk device name between VMware and Virtualbox
 if [ -e /dev/ada0 ]; then
   DISKSLICE=ada0

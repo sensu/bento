@@ -6,5 +6,5 @@ mkdir -p /var/db/freebsd-update/files;
 rm -f /var/db/freebsd-update/*-rollback;
 rm -rf /var/db/freebsd-update/install.*;
 rm -rf /boot/kernel.old;
-rm -rf /usr/src/*;
+for i in `/usr/src/*`; do rm -rf $i; done
 rm -f /*.core;
